@@ -8,6 +8,10 @@ public class Wall : MonoBehaviour
 
     public Vector3 newPosition;
 
+    public Explosion explosion;
+
+    public float newPosX;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +22,7 @@ public class Wall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
 
@@ -34,9 +38,21 @@ public class Wall : MonoBehaviour
 
             Debug.Log(newPosition);
 
+            newPosX = newPosition.x;
+
+                Debug.Log("newPosition.x" + newPosition.x);
+
             Instantiate(explosionPrefab,newPosition,Quaternion.identity);
-            
+
+          
         }
+
+       
+    }
+    public float newPos ()
+    {
+       return  newPosX;
+        
     }
 }
 

@@ -10,28 +10,45 @@ public class Explosion : MonoBehaviour
 
     public float randPartX, randPartY, randPartZ;
 
+    public Wall wall;
+
+    public GameObject cubeToDestroy;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < cubes.Length; i++)
+        wall = GameObject.FindWithTag("wall").GetComponent<Wall>();
+        if (wall != null)
         {
-            randPartX = 0f;//Random.Range(-2.0f, 2f);
-            randPartY = 5f;//Random.Range(2.0f, 4.5f);
-            randPartZ = 30f;
+            Debug.Log(randPartX = wall.newPos());
+            
+            //
 
-            cubes[i].transform.position = new Vector3(randPartX, randPartY, randPartZ);
+            Debug.Log("this does exist ");
         }
 
+
+
+        for (int i = 0; i < cubes.Length; i++)
+        {
+            randPartX = wall.newPos();
+            randPartY = 3f;//Random.Range(2.0f, 4.5f);
+            randPartZ = 30f;
+             cubes[i].transform.position = new Vector3(randPartX, randPartY, randPartZ);
+
+            cubeToDestroy = cubes[i];
+            Destroy(cubeToDestroy, 1f);
+            
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       
         
     }
-
+ 
     
 }
+

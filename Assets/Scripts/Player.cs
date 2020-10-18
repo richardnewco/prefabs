@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             return randPos;
 
         }
-        Destroy(bulletToDie,2.0f);
+        Destroy(bulletToDie,.6f);
     }
 }
 
