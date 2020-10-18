@@ -34,14 +34,14 @@ public class Player : MonoBehaviour
         {
             randX = Random.Range(-4f, 4f);
             randY = 4.74f;
-            randZ = -29.69f;
+            randZ = 11f;
 
             randPos = new Vector3(randX, randY, randZ);
 
             return randPos;
 
         }
-        Destroy(bulletToDie, 3.0f);
+        Destroy(bulletToDie,2.0f);
     }
 }
 
